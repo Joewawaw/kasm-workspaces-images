@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -ex
-START_COMMAND="/home/keshav/squqashfs-root/AppRun"
+START_COMMAND="vglrun -d $KASM_EGL_CARD $HOME/PrusaSlicer-2.7.0-alpha1+linux-x64-GTK3-202310191626/bin/prusa-slicer"
 PGREP="prusaslicer"
 export MAXIMIZE="true"
 export MAXIMIZE_NAME="PrusaSlicer"
 MAXIMIZE_SCRIPT=$STARTUPDIR/maximize_window.sh
-DEFAULT_ARGS="--no-metadata-network-access --no-qt-privacy-ask"
+DEFAULT_ARGS=""
 ARGS=${APP_ARGS:-$DEFAULT_ARGS}
 
 options=$(getopt -o gau: -l go,assign,url: -n "$0" -- "$@") || exit

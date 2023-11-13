@@ -2,10 +2,10 @@
 set -ex
 START_COMMAND="kicad"
 PGREP="kicad"
-export MAXIMIZE="true"
+export MAXIMIZE="false"
 export MAXIMIZE_NAME="KiCad"
 MAXIMIZE_SCRIPT=$STARTUPDIR/maximize_window.sh
-DEFAULT_ARGS="--no-metadata-network-access --no-qt-privacy-ask"
+DEFAULT_ARGS=""
 ARGS=${APP_ARGS:-$DEFAULT_ARGS}
 
 options=$(getopt -o gau: -l go,assign,url: -n "$0" -- "$@") || exit
